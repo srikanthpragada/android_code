@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".AsyncSumActivity">
+        <activity android:name=".SendMessageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,8 +17,30 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".SumActivity">
+            <intent-filter>
+                <action android:name="sum" />
+                <category android:name="android.intent.category.DEFAULT" />
 
-        <!--
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AsyncSumActivity">
+            <intent-filter>
+                <action android:name="sum" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="st" />
+            </intent-filter>
+        </activity>
+
+
+        <receiver
+            android:name=".MessageReceiver">
+            <intent-filter>
+                <action android:name="com.st.MESSAGE" />
+            </intent-filter>
+        </receiver>
+
 
         <receiver
             android:name=".TimeChangeReceiver"
@@ -37,14 +59,14 @@
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
--->
 
-        <!--<service android:name=".SumService" />-->
-        <!--<service android:name=".SumIntentService" />-->
+       <service android:name=".SumService" />
+       <service android:name=".NumbersService"/>
 
     </application>
 
 
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>

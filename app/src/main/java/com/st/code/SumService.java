@@ -37,7 +37,7 @@ public class SumService extends Service {
         }
 
         Log.d ("Code","Sum = " + sum);
-        stopSelf(); // stop service
+        // stopSelf(); // stop service
         return  START_STICKY;
     }
 

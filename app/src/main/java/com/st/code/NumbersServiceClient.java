@@ -57,10 +57,10 @@ public class NumbersServiceClient extends AppCompatActivity {
 
 
         @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
+        public void onServiceConnected(ComponentName name, IBinder binder) {
              Log.d("Code", "onServiceConnected()");
-             NumbersService.NumbersBinder binder = (NumbersService.NumbersBinder) service ;
-             numberService = (NumbersService) binder.getService();
+             NumbersService.NumbersBinder mbinder = (NumbersService.NumbersBinder) binder;
+             numberService = (NumbersService) mbinder.getService();
 
         }
 

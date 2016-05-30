@@ -12,25 +12,25 @@ public class NumbersService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d("Code", "onCreate()");
+        Log.d("Service", "onCreate()");
         super.onCreate();
     }
 
     @Override
     public void onDestroy() {
-        Log.d("Code", "onDestroy()");
+        Log.d("Service", "onDestroy()");
         super.onDestroy();
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-         Log.d("Code", "onBind()");
+         Log.d("Service", "onBind()");
          return  new NumbersBinder();
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
-        Log.d("Code", "onUnbind()");
+        Log.d("Service", "onUnbind()");
         return super.onUnbind(intent);
     }
 

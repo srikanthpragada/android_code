@@ -5,14 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-public class PrintReceiver extends BroadcastReceiver {
+public class MessageReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        try {
-            Thread.sleep(1000);
-        }
-        catch(Exception ex) {}
-
-       Log.d("Code", intent.getStringExtra("now"));
+        Log.d("Code", intent.getStringExtra("message"));
     }
 }

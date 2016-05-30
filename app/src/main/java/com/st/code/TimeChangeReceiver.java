@@ -13,7 +13,6 @@ public class TimeChangeReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-         Log.d("Code", "Time Changed!");
-         Log.d("Code", new Date().toString());
+         Log.d("Code", "New Time : " +  new Date().toString());
     }
 }

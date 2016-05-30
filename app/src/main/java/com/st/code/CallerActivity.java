@@ -26,14 +26,18 @@ public class CallerActivity extends AppCompatActivity {
         if (! editCategory.getText().toString().equals(""))
               intent.addCategory(editCategory.getText().toString());
 
-        Log.d("Code", intent.toString());
-        startActivity(intent);
+
+        try {
+            startActivity(intent);
+        }catch(Exception ex) {
+            Log.d("Code","Error : "+ ex.getMessage());
+        }
 
     }
 
     public void callDialor(View v) {
         Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_DIAL);
+        intent.setAction(Intent.ACTION_DIAL);  // android.intent.action.DIAL
         Uri uri = Uri.fromParts("tel","12345678","");
         intent.setData(uri);
         startActivity(intent);
